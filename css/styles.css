@@ -1,0 +1,108 @@
+
+.set{
+    background-color: lightcoral;
+    border: 1px solid rgb(37, 11, 85);
+    margin: 5px;
+    padding: 5px;
+}
+#MyTitle{
+    border: 1px solid rgb(37, 11, 85);
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+    background-color: lightcoral;
+}
+#MyFoot{
+    border: 1px solid rgb(37, 11, 85);
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+    background-color: lightcoral;
+}
+li{
+    width: 70px;
+    height: 30px;
+    background-color: lightblue;
+    border: 1px solid rgb(37, 11, 85);
+    margin: 5px;
+    padding: 5px;
+}
+li:hover{
+    background-color: lightseagreen;
+}
+ul{
+    list-style: none;}
+body {
+    display: grid;
+    grid-template-areas:
+    "title title title title"
+    "a c d b"
+    "footer footer footer footer";
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto 1fr auto;
+    gap: 10px;
+}
+
+#MyTitle {
+    grid-area: title;
+}
+
+#Adiv {
+    grid-area: a;
+}
+
+#Bdiv {
+    grid-area: b;
+}
+
+#Cdiv {
+    grid-area: c;
+}
+
+#Ddiv {
+    grid-area: d;
+}
+
+#MyFoot {
+    grid-area: footer;
+}
+
+@media screen and (max-width: 1023px) {
+    body {
+    grid-template-areas:
+        "title title"
+        "a b"
+        "c d"
+        "footer footer";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    body {
+    grid-template-areas:
+        "title"
+        "a"
+        "b"
+        "c"
+        "d"
+        "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto repeat(4, 1fr) auto;
+    }
+}
+@media screen and (max-width: 440px) {
+    body {
+    display: grid;
+    grid-template-areas:
+        "title"
+        "a"
+        "b"
+        "c"
+        "d"
+        "foot";
+    grid-template-rows: repeat(6,auto);
+    grid-template-columns: 1fr;
+    }
+}
